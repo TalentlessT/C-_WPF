@@ -1,0 +1,110 @@
+﻿<Window x:Class="EvidenceBěhání.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EvidenceBěhání"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <DataGrid
+            Name="DataDisplay"
+            Grid.Column="0"
+            Grid.Row="0"
+            AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nazev" Binding="{Binding Nazev}" />
+                <DataGridTextColumn Header="Delka" Binding="{Binding Delka}" />
+                <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" />
+                <DataGridTextColumn Header="Cas" Binding="{Binding Cas}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,120,0">
+            
+            <Label  Width="120" 
+                    Height="30" 
+                    Content="Nazev"
+                    Margin="0,20,0,0"/>
+            <Label Width="120" 
+                    Height="30" 
+                    Content="Delka"
+                    Margin="0,20,0,0"/>
+            <Label Width="120" 
+                    Height="30" 
+                    Content="Datum"
+                    Margin="0,20,0,0"/>
+            <Label Width="120" 
+                    Height="30" 
+                    Content="Cas"
+                    Margin="0,20,0,0"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="120,0,0,0">
+
+            <TextBox Width="120" 
+                     Height="30"
+                     Name="Nazev"
+                     Margin="0,20,0,0"/>
+            <TextBox Width="120" 
+                     Height="30"
+                     Name="Delka"
+                     Margin="0,20,0,0"/>
+            <TextBox Width="120" 
+                     Height="30"
+                     Name="Datum"
+                     Margin="0,20,0,0"/>
+            <TextBox Width="120" 
+                     Height="30"
+                     Name="Cas"
+                     Margin="0,20,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="130,0,0,60">
+            
+            <Button Width="120" 
+                    Height="30"
+                    Margin="0,20,0,0"
+                    Click="Button_Click_Vlozit"
+                    Content="Vlozit"/>
+            <Button Width="120" 
+                    Height="30" 
+                    Margin="0,20,0,0"
+                    Click="Button_Click_Smazat"
+                    Content="Smazat"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" 
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,130,60">
+            <Button Width="120" 
+                    Height="30"
+                    Margin="0,20,0,0"
+                    Click="Button_Click_Souhrn"
+                    Content="Souhrn"/>
+            <Button Width="120" 
+                    Height="30"
+                    Margin="0,20,0,0"
+                    Click="Button_Click_Export"
+                    Content="Export"/>
+        </StackPanel>
+    </Grid>
+</Window>
